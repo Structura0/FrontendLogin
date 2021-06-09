@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row py-5">
+        <br>
+
+        <div class="col-12 text-center example-container">
+
+
+
+
+            <body class="text-center">
+                <form class="form-signin" #formLog="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="alert alert-success" *ngIf="status =='sucess'">
+                        login correcto
+                    </div>
+                    <div class="alert alert-success" *ngIf="status =='error'">
+                        no te has identificado
+                    </div>
+
+                    <div class="card-body; col-auto  p-5 text-center" >
+                        <div class="shadow-lg p-2 mb-2 bg-white rounded">
+
+                            <h1 class="h3 mb-3 font-weight-normal">Ingrese sus credenciales</h1>
+
+                            <div class="alert alert-danger" role="alert" *ngIf="aut">
+                                Usuario ó Contraseña incorrecta!
+                            </div>
+
+                            <mat-form-field style="width: 70%">
+                                <input  matInput placeholder='Nombre del usuario' [type]="hide ? 'user' : 'text'" name="nombre" #nombre="ngModel" [(ngModel)]="user.userName" value={{user.userName}} required>
+                                <mat-error *ngIf="!nombre.valid && nombre.touched">
+                                    Ingrese el Usuario
+                                </mat-error>
+                            </mat-form-field>
+                            <br>
+                            <br>
+
+                            <mat-form-field style="width: 70%;">
+                                <input  matInput placeholder="Ingrese su Password" [type]="hide ? 'password' : 'text'" name="pass" #pass="ngModel" [(ngModel)]="user.pw" value={{user.pw}} required>
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                <mat-error *ngIf="!pass.valid && pass.touched">
+                                    Ingrese el Password
+                                </mat-error>
+                            </mat-form-field>
+                            <br>
+                            <br>
+
+                            <div class="checkbox mb-3">
+                                <mat-checkbox style="color:black">Recordar credenciales</mat-checkbox>
+                            </div>
+                            <br>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" style="    background-color: #673ab7;">Ingresar</button>
+                        </div>
+
+                    </div>
+                </form>
+            </body>
+        </div>
+
+    </div>

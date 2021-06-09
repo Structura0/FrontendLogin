@@ -1,0 +1,110 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+    overflow: auto;
+    width: 62%;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.grid-container {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.th,
+.td {
+    padding: 100px;
+}
+
+thead {
+    background-color: #673ab7;
+    border-bottom: solid 5px #ffff;
+    color: white
+}
+
+.tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.tr:hover td {
+    background-color: #369681;
+    color: white;
+}
+
+.demo-table {
+    width: 100%;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+    background-color: #673ab7;
+}
+
+.demo-row-is-clicked {
+    font-weight: bold;
+}
+
+tr.mat-footer-row {
+    font-weight: bold;
+}
+
+button {
+    margin: 16px 8px black;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-button-row {
+    float: none;
+    text-align: center;
+}
+
+.example-tab-icon {
+    margin-right: 8px;
+}
+
+.example-stretched-tabs {
+    max-width: 800px;
+}
+
+p {
+    max-height: 3.5rem;
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,55 @@
+<header>
+    <div class="fixed-top">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+
+                <span>Login</span>
+
+                <span class="example-spacer"></span>
+                <div class="ident">
+
+                    <div *ngIf="identity">
+                        <mat-icon>account_circle</mat-icon>
+                        <span>{{identity.userName}}</span>
+
+                    </div>
+                </div>
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                      <mat-icon>more_vert</mat-icon>
+              </button>
+                <mat-menu #menu="matMenu">
+
+
+
+                    <button mat-menu-item [routerLink]="['login']" *ngIf="!identity">
+                          <mat-icon>fingerprint</mat-icon>
+                          <span >Inicio sesión</span>
+                  </button>
+
+                    <button mat-menu-item [routerLink]="['inicio']" *ngIf="identity">
+                    <mat-icon>home_work</mat-icon>
+                    <span>Inicio</span>
+                </button>
+                    <button mat-menu-item (click)="logout()" *ngIf="identity">
+                    <mat-icon>power_settings_new</mat-icon>
+                    <span >Cierre sesión</span>
+             </button>
+
+
+                </mat-menu>
+
+            </mat-toolbar-row>
+
+
+        </mat-toolbar>
+
+
+    </div>
+</header>
+
+
+<main role="main">
+    <router-outlet></router-outlet>
+
+</main>
